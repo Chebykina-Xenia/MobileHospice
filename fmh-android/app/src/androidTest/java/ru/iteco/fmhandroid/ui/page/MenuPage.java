@@ -6,6 +6,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 
 import ru.iteco.fmhandroid.ui.elements.AboutApp;
 import ru.iteco.fmhandroid.ui.elements.Menu;
+import ru.iteco.fmhandroid.ui.elements.News;
 import ru.iteco.fmhandroid.ui.elements.Quotes;
 
 public class MenuPage {
@@ -34,5 +35,13 @@ public class MenuPage {
         //переходим в цитаты - нажимаем на бабочку
         Menu.goQuotesButton.perform(click());
         Quotes.missionTitleText.check(matches(isDisplayed()));
+    }
+
+    //переходим в News
+    public static void goNews() {
+        Menu.menuButton.perform(click());
+        Menu.newsOfMenu.check(matches(isDisplayed()));
+        Menu.newsOfMenu.perform(click());
+        News.titleNews.check(matches(isDisplayed()));
     }
 }
