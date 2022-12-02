@@ -44,11 +44,5 @@ public class News {
     public static ViewInteraction descriptionTextInputNews = onView(withId(R.id.news_item_description_text_input_edit_text));
     //кнопка Сохранить
     public static ViewInteraction buttonSaveNews = onView(withId(R.id.save_button));
-
     public static ViewInteraction categorySee = onView(withId(R.id.news_item_category_text_auto_complete_text_view));
-
-    public static ViewInteraction cancelButtonOfNews = onView(withId(R.id.cancel_button));
-    public static ViewInteraction titleOfEditingNewsWindow = onView(withText("Editing"));
-    public static ViewInteraction buttonForSwitchTextInput = onView(withContentDescription("Switch to text input mode for the time input."));
-
 }
