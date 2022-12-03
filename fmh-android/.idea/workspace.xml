@@ -64,7 +64,7 @@
       <recent name="ru.iteco.fmhandroid.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.shouldChangeNews()">
+  <component name="RunManager" selected="Android Instrumented Tests.shouldThrowOff()">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="FMHAndroid.app" />
       <option name="DEPLOY" value="true" />
@@ -122,11 +122,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldChangeNews()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="should3()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldChangeNews" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
+      <option name="METHOD_NAME" value="should3" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -175,11 +175,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldCreateNews()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldAddComment()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldCreateNews" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
+      <option name="METHOD_NAME" value="shouldAddComment" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -228,11 +228,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldFilterNewsCa...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldClaimExecute()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldFilterNewsCategory" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
+      <option name="METHOD_NAME" value="shouldClaimExecute" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -281,11 +281,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldLogInWithInV...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldInProgress()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldLogInWithInValidData" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.AuthorizationTest" />
+      <option name="METHOD_NAME" value="shouldInProgress" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -334,11 +334,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldLogInWithVal...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldThrowOff()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldLogInWithValidData" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.AuthorizationTest" />
+      <option name="METHOD_NAME" value="shouldThrowOff" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -389,11 +389,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android Instrumented Tests.shouldChangeNews()" />
-        <item itemvalue="Android Instrumented Tests.shouldFilterNewsCa...()" />
-        <item itemvalue="Android Instrumented Tests.shouldLogInWithVal...()" />
-        <item itemvalue="Android Instrumented Tests.shouldLogInWithInV...()" />
-        <item itemvalue="Android Instrumented Tests.shouldCreateNews()" />
+        <item itemvalue="Android Instrumented Tests.shouldThrowOff()" />
+        <item itemvalue="Android Instrumented Tests.shouldClaimExecute()" />
+        <item itemvalue="Android Instrumented Tests.shouldInProgress()" />
+        <item itemvalue="Android Instrumented Tests.shouldAddComment()" />
+        <item itemvalue="Android Instrumented Tests.should3()" />
       </list>
     </recent_temporary>
   </component>
@@ -425,8 +425,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/NewsPage.java</url>
-          <line>151</line>
+          <line>112</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

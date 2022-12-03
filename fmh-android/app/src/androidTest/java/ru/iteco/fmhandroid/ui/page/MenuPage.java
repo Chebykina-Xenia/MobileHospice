@@ -5,6 +5,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 
 import ru.iteco.fmhandroid.ui.elements.AboutApp;
+import ru.iteco.fmhandroid.ui.elements.Claim;
 import ru.iteco.fmhandroid.ui.elements.Menu;
 import ru.iteco.fmhandroid.ui.elements.News;
 import ru.iteco.fmhandroid.ui.elements.Quotes;
@@ -43,5 +44,12 @@ public class MenuPage {
         Menu.newsOfMenu.check(matches(isDisplayed()));
         Menu.newsOfMenu.perform(click());
         News.titleNews.check(matches(isDisplayed()));
+    }
+
+    //Переходим в заявки
+    public static void goClaims() {
+        Menu.menuButton.perform(click());
+        Menu.claimsOfMenu.perform(click());
+        Claim.titleClaimsBlock.check(matches(isDisplayed()));
     }
 }

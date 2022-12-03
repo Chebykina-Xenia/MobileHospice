@@ -9,11 +9,16 @@ import androidx.test.rule.ActivityTestRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+//import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
+
+//@RunWith(AllureAndroidJUnit4.class)
+
 
 //тестирование Авторизации
 public class AuthorizationTest {
