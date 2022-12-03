@@ -13,18 +13,18 @@ import androidx.test.espresso.NoMatchingViewException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import androidx.test.rule.ActivityTestRule;
 
-//import io.qameta.allure.android.runners.AllureAndroidJUnit4;
-import ru.iteco.fmhandroid.R;
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.date.DataHelper;
 import ru.iteco.fmhandroid.ui.elements.Claim;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.ClaimPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
-//@RunWith(AllureAndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 
 public class ClaimTest {
 

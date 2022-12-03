@@ -8,12 +8,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-//import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.page.AboutAppPage;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
-//@RunWith(AllureAndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 
 public class AboutAppTest {
 

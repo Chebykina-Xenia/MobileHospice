@@ -20,14 +20,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-//import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.elements.News;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
 import ru.iteco.fmhandroid.ui.page.NewsPage;
-//@RunWith(AllureAndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 
 public class NewsTest {
 
