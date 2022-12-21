@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="883b14d9-51f1-4589-ba13-fd5a055af1ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\cheby\.android\avd\Pixel_4_API_30_1.avd]" />
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -64,7 +66,7 @@
       <recent name="ru.iteco.fmhandroid.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.shouldLogInWithVal...()">
+  <component name="RunManager" selected="Android Instrumented Tests.shouldGoQuotes()">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="FMHAndroid.app" />
       <option name="DEPLOY" value="true" />
@@ -175,11 +177,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldClaimExecute()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldBeInfInAbout...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldClaimExecute" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
+      <option name="METHOD_NAME" value="shouldBeInfInAboutApp" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.AboutAppTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -228,11 +230,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldInProgress()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldGoQuotes()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldInProgress" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
+      <option name="METHOD_NAME" value="shouldGoQuotes" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.QuoteTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -389,11 +391,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android Instrumented Tests.shouldGoQuotes()" />
+        <item itemvalue="Android Instrumented Tests.shouldBeInfInAbout...()" />
         <item itemvalue="Android Instrumented Tests.shouldLogInWithVal...()" />
         <item itemvalue="Android Instrumented Tests.AuthorizationTest" />
         <item itemvalue="Android Instrumented Tests.shouldThrowOff()" />
-        <item itemvalue="Android Instrumented Tests.shouldClaimExecute()" />
-        <item itemvalue="Android Instrumented Tests.shouldInProgress()" />
       </list>
     </recent_temporary>
   </component>
