@@ -1,0 +1,56 @@
+{
+    "name": "Авторизация с невалидными данными",
+    "start": 1675359385481,
+    "stop": 1675359401730,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "broken",
+    "statusDetails": {
+        "message": "Class 'org.hamcrest.StringDescription' does not implement interface 'java.lang.Iterable' in call to 'java.util.Iterator java.lang.Iterable.iterator()' (declaration of 'org.hamcrest.BaseDescription' appears in /data/app/~~qWC7ySEhvXy0mHf0xxCivg==/ru.iteco.fmhandroid-J5xnzKN6c2zKlLmg02NrmQ==/base.apk!classes16.dex)",
+        "trace": "java.lang.IncompatibleClassChangeError: Class 'org.hamcrest.StringDescription' does not implement interface 'java.lang.Iterable' in call to 'java.util.Iterator java.lang.Iterable.iterator()' (declaration of 'org.hamcrest.BaseDescription' appears in /data/app/~~qWC7ySEhvXy0mHf0xxCivg==/ru.iteco.fmhandroid-J5xnzKN6c2zKlLmg02NrmQ==/base.apk!classes16.dex)\n\tat org.hamcrest.BaseDescription.appendValueList(BaseDescription.java:81)\n\tat androidx.test.espresso.matcher.ViewMatchers.getMismatchDescriptionString(ViewMatchers.java:3)\n\tat androidx.test.espresso.matcher.ViewMatchers.assertThat(ViewMatchers.java:5)\n\tat androidx.test.espresso.assertion.ViewAssertions$DoesNotExistViewAssertion.check(ViewAssertions.java:3)\n\tat androidx.test.espresso.ViewInteraction$SingleExecutionViewAssertion.check(ViewInteraction.java:2)\n\tat androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:14)\n\tat androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:1)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat android.os.Handler.handleCallback(Handler.java:938)\n\tat android.os.Handler.dispatchMessage(Handler.java:99)\n\tat android.os.Looper.loop(Looper.java:223)\n\tat android.app.ActivityThread.main(ActivityThread.java:7656)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)\n\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)\n"
+    },
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "9fef5590-c2f0-483b-bfd0-360d37753abf",
+    "historyId": "418c55c30001fb7b335652dd4b230d22",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldLogInWithInValidData",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldLogInWithInValidData"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(2980)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}
