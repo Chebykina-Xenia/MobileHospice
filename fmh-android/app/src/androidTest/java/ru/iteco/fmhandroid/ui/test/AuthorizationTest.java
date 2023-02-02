@@ -1,18 +1,17 @@
 package ru.iteco.fmhandroid.ui.test;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
 import androidx.test.espresso.NoMatchingViewException;
-import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import androidx.test.rule.ActivityTestRule;
+
+import org.junit.Rule;
+
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
-import ru.iteco.fmhandroid.R;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
@@ -41,24 +40,23 @@ public class AuthorizationTest {
     }
 
     @Test
-    //Авторизация с валидными данными
+    @DisplayName("Авторизация с валидными данными")
     public void shouldLogInWithValidData() throws InterruptedException {
         AuthorizationPage.logIn(validLogin, validPassword);
         MenuPage.checkTradeMark();
-        MenuPage.logOut();
     }
 
     @Test
-    //Авторизация с невалидными данными
+    @DisplayName("Авторизация с невалидными данными")
     public void shouldLogInWithInValidData() throws InterruptedException {
         AuthorizationPage.logIn(invalidLogin, invalidPassword);
-        onView(withText("Wrong login or password"));
+        MenuPage.checkDisplayErrorMessage(activityTestRule, "Wrong login or password");
     }
 
     @Test
-    //Оставляем поля пустами и нажимаем кнопку Авторизации
+    @DisplayName("Авторизация с пустыми полями")
     public void shouldTryLogInWithEmptyField() throws InterruptedException {
         AuthorizationPage.clickInButton();
-        onView(withText(R.string.empty_login_or_password));
+        MenuPage.checkDisplayErrorMessage(activityTestRule, "Login or password cannot be empty");
     }
 }

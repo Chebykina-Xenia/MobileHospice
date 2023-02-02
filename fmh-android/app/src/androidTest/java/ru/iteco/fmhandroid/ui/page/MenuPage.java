@@ -1,9 +1,18 @@
 package ru.iteco.fmhandroid.ui.page;
 
+import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+
+import androidx.test.rule.ActivityTestRule;
+
+import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.elements.AboutApp;
 import ru.iteco.fmhandroid.ui.elements.Claim;
 import ru.iteco.fmhandroid.ui.elements.Menu;
@@ -51,5 +60,10 @@ public class MenuPage {
         Menu.menuButton.perform(click());
         Menu.claimsOfMenu.perform(click());
         Claim.titleClaimsBlock.check(matches(isDisplayed()));
+    }
+
+    public static void checkDisplayErrorMessage(ActivityTestRule<AppActivity> activityTestRule, String message) {
+        onView(withText(message)).inRoot(withDecorView(not(is(activityTestRule.getActivity().getWindow().getDecorView()))))
+                .check(matches(isDisplayed())); // проверяем что отображается окно с нужным текстом
     }
 }

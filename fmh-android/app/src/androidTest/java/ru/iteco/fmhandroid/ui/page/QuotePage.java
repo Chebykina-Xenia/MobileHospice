@@ -12,6 +12,10 @@ public class QuotePage {
         // просмотр цитаты и её описания
         Quotes.missionTitleText.check(matches(isDisplayed()));
         Quotes.missionTitleText.perform(click());
+    }
+
+    public static void checkQuoteDisplay() {
+        //проверка отображения цитаты и описания
         Quotes.descriptionText.check(matches(isDisplayed()));
     }
 }

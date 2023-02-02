@@ -1,17 +1,5 @@
 package ru.iteco.fmhandroid.ui.test;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.replaceText;
-import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
-import static org.hamcrest.Matchers.allOf;
-
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.rule.ActivityTestRule;
 
@@ -21,12 +9,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
-import ru.iteco.fmhandroid.R;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
-import ru.iteco.fmhandroid.ui.elements.News;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
 import ru.iteco.fmhandroid.ui.page.NewsPage;
+
 @RunWith(AllureAndroidJUnit4.class)
 
 public class NewsTest {
@@ -50,14 +38,11 @@ public class NewsTest {
     String withDialPadOrTextInput = "dial";
     String saveOrCancelTime = "save";
 
-
-
-    //оставляем поле категория пустым
     @Test
+    @DisplayName("Создание новости без категории")
     public void shouldErrorNotCategory() throws InterruptedException {
         String emptyCategory = "yes";
         String withCategoryChoice = "no";
-        //        String chosenCategory = "Объявление";
         String category = "no";
         String title = "Now News";
         String emptyDate = "no";
@@ -68,42 +53,39 @@ public class NewsTest {
         NewsPage.creationOfNews();
         NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
         NewsPage.saveNews();
-        onView(withText(R.string.empty_fields));
+        NewsPage.checkIconVisible();
     }
 
-    //успешное создание новости
     @Test
+    @DisplayName("Создание новости")
     public void shouldCreateNews() throws InterruptedException {
         String emptyCategory = "no";
         String withCategoryChoice = "yes";
-       // String chosenCategory = "Объявление";
         String category = "no";
-        String title = "Now News";
+        String title = "New News Test";
         String emptyDate = "no";
         String emptyTime = "no";
-//        String withDialPadOrTextInput = "dial";
-  //      String saveOrCancelTime = "save";
         String emptyDescription = "no";
         String description = "Description Test";
         MenuPage.goNews();
         NewsPage.creationOfNews();
         NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
         NewsPage.saveNews();
-        News.buttonAddNews.check(matches(isDisplayed()));
+        NewsPage.checkCreatedNews(title);
+        MenuPage.goNews();
+        NewsPage.filterNews(chosenCategory);
+        NewsPage.deleteNews(title);
     }
 
-    //Удаляем новость
     @Test
+    @DisplayName("Удаление новости")
     public void shouldDeleteNews() throws InterruptedException {
         String emptyCategory = "no";
         String withCategoryChoice = "yes";
-        //String chosenCategory = "Объявление";
         String category = "no";
         String title = "Test new";
         String emptyDate = "no";
         String emptyTime = "no";
-  //      String withDialPadOrTextInput = "dial";
-   //     String saveOrCancelTime = "save";
         String emptyDescription = "no";
         String description = "Description Test11";
         MenuPage.goNews();
@@ -115,21 +97,18 @@ public class NewsTest {
         NewsPage.deleteNews(title);
 
         MenuPage.goNews();
-        onView(withText(title)).check(doesNotExist());
+        NewsPage.checkDeleteNews(title);
     }
 
-    //проверяем работу фильтра
     @Test
+    @DisplayName("Проверка работы фильтра")
     public void shouldFilterNewsCategory() throws InterruptedException {
         String emptyCategory = "no";
         String withCategoryChoice = "yes";
-        //String chosenCategory = "Объявление";
         String category = "no";
         String title = "Chek Filter";
         String emptyDate = "no";
         String emptyTime = "no";
-     //   String withDialPadOrTextInput = "dial";
-     //   String saveOrCancelTime = "save";
         String emptyDescription = "no";
         String description = "Description";
         MenuPage.goNews();
@@ -139,24 +118,20 @@ public class NewsTest {
 
         MenuPage.goNews();
         NewsPage.filterNews(chosenCategory);
-        onView(withText(title)).check(matches(isDisplayed())).perform(click());
-        onView(allOf(withId(R.id.edit_news_item_image_view), hasSibling(withText(title)))).perform(click());
-        News.categorySee.check(matches(withText(chosenCategory)));
+        NewsPage.checkCreatedNews(title);
+        NewsPage.deleteNews(title);
     }
 
-    //редактирование новости
     @Test
+    @DisplayName("Редактирование новости")
     public void shouldChangeNews() throws InterruptedException {
         String emptyCategory = "no";
         String withCategoryChoice = "yes";
-        //String chosenCategory = "Объявление";
         String category = "no";
         String title = "Now Change";
         String newTitle = "Now Change Test";
         String emptyDate = "no";
         String emptyTime = "no";
-       // String withDialPadOrTextInput = "dial";
-       // String saveOrCancelTime = "save";
         String emptyDescription = "no";
         String description = "Description Change";
         MenuPage.goNews();
@@ -165,17 +140,10 @@ public class NewsTest {
         NewsPage.saveNews();
         MenuPage.goNews();
         NewsPage.filterNews(chosenCategory);
-        onView(withText(title)).check(matches(isDisplayed())).perform(click());
-        onView(allOf(withId(R.id.edit_news_item_image_view), hasSibling(withText(title)))).perform(click());
-
-        News.titleTextInputNews.perform(replaceText(newTitle));
-        News.buttonSaveNews.perform(click());
-
+        NewsPage.updateTitleNews(title, newTitle);
         MenuPage.goNews();
         NewsPage.filterNews(chosenCategory);
-        onView(withText(newTitle)).check(matches(isDisplayed()));
-        onView(withText(newTitle)).check(matches(isDisplayed())).perform(click());
+        NewsPage.checkCreatedNews(newTitle);
         NewsPage.deleteNews(newTitle);
     }
-
 }

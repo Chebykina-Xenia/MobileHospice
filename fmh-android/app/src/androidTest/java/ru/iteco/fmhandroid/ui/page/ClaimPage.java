@@ -27,9 +27,9 @@ public class ClaimPage {
     }
 
     public static void fillClaimFields(String emptyTitle, String title, String emptyExecutor, String choiceOfExecutor, String chosenExecutor, String executor, String emptyDate, String emptyTime, String withDialPadOrTextInput, String saveOrCancelTime, String emptyDescription, String description) {
-//        Allure.step("Заполнение полей при создании заявки");
+        // позиции всех исполнителей
         Integer executorPosition = null;
-        if (chosenExecutor == "Смирнов Петр Петрович") {
+        if (chosenExecutor == "Ivanov Ivan Ivanovich") {
             executorPosition = 0;
         } else if (chosenExecutor == "Иванов Данил Данилович") {
             executorPosition = 1;
@@ -37,6 +37,10 @@ public class ClaimPage {
             executorPosition = 2;
         } else if (chosenExecutor == "Сидоров Дмитрий Дмитриевич") {
             executorPosition = 3;
+        } else if (chosenExecutor == "Тестов Тест Тестович") {
+            executorPosition = 4;
+        } else if (chosenExecutor == "Netology Diplom QAMID") {
+            executorPosition = 5;
         }
 
         // заполнение поля "Тема"
@@ -47,7 +51,7 @@ public class ClaimPage {
         // заполнение поля "Исполнитель"
         if (emptyExecutor == "no") {
             if (choiceOfExecutor == "yes") {
-                Claim.buttonShowingDropdownMenu.perform(click());
+                Claim.executor.perform(click());
                 Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(executorPosition).perform(ViewActions.click());
             } else {
                 Claim.executorTextInput.perform(replaceText(executor));
@@ -70,7 +74,6 @@ public class ClaimPage {
                 }
             }
         }
-
         // заполнение поля "Описание"
         if (emptyDescription == "no") {
             Claim.descriptionTextInputClaim.perform(replaceText(description));
@@ -108,8 +111,33 @@ public class ClaimPage {
     public static void addCommentStatusClaim(String textComment, String newStatus) {
         onView(withHint("Comment")).perform(replaceText(textComment));
         Claim.okButton.perform(click());
-        Claim.statusClaimNow.check(matches(withText(newStatus)));
-
     }
 
+    //открываем первую заявку
+    public static void openFirstClaim() {
+        Claim.firstClaim.perform(click());
+    }
+
+    //проверяем статус
+    public static void checkStatusClaim(String newStatus) {
+        getStatusLabel().check(matches(withText(newStatus)));
+    }
+
+    //выводим текущий статус
+    public static ViewInteraction getStatusLabel() {
+        return onView(Claim.statusLabelText);
+    }
+
+    //добавление комментария
+    public static void addCommentClaim(String commentText) throws InterruptedException {
+        Claim.addComment.perform(scrollTo()).perform(click());
+        onView(withHint("Comment")).perform(replaceText(commentText));
+        Claim.saveButton.perform(click());
+        Thread.sleep(3000);
+    }
+
+    //проверка созданного комментария
+    public static void checkCreatedComment(String commentText) {
+        DataHelper.isDisplayedSwipe(onView(withHint(commentText)), 2, true);
+    }
 }

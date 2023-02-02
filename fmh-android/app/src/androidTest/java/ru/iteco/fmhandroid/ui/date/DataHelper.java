@@ -25,6 +25,7 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import ru.iteco.fmhandroid.R;
 
 public class DataHelper {
+
     public static boolean isDisplayedSwipe(ViewInteraction locator, int recycler, boolean finishSwipe) {
         try {
             locator.check(matches(isDisplayed()));
@@ -40,6 +41,9 @@ public class DataHelper {
                 }
                 if (recycler == 2) {
                     onView(allOf(withId(R.id.claim_comments_list_recycler_view), isDisplayed())).perform(actionOnItemAtPosition(n, swipeUp()));
+                }
+                if (recycler == 3) {
+                    onView(allOf(withId(R.id.news_list_recycler_view), isDisplayed())).perform(actionOnItemAtPosition(n, swipeUp()));
                 }
             } catch (PerformException e) {
                 return false;

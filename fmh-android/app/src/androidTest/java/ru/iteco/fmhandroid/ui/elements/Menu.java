@@ -26,5 +26,4 @@ public class Menu {
     // Переход к блоку цитат о хосписе
     public static ViewInteraction goQuotesButton = onView(withId(R.id.our_mission_image_button));
 
-
 }

@@ -9,10 +9,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
 import ru.iteco.fmhandroid.ui.page.QuotePage;
+
 @RunWith(AllureAndroidJUnit4.class)
 
 public class QuoteTest {
@@ -32,9 +34,10 @@ public class QuoteTest {
     }
 
     @Test
-    //Проверка просмотра цитат и их описания
+    @DisplayName("Проверка просмотра цитат и их описания")
     public void shouldGoQuotes() {
         MenuPage.goQuotes();
         QuotePage.viewQuote();
+        QuotePage.checkQuoteDisplay();
     }
 }

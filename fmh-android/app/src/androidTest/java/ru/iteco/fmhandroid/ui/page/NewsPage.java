@@ -3,6 +3,7 @@ package ru.iteco.fmhandroid.ui.page;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -19,6 +20,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 
+import ru.iteco.fmhandroid.ui.date.DataHelper;
 import ru.iteco.fmhandroid.ui.elements.News;
 
 public class NewsPage {
@@ -105,7 +107,6 @@ public class NewsPage {
         News.okButton.perform(click());
         News.buttonNotActive.perform(click());
         News.buttonFilter.perform(click());
-
     }
 
     //удаление новости
@@ -116,5 +117,33 @@ public class NewsPage {
         News.okButton.perform(click());
         // проверка возвращения к новостям (видна кнопка добавления новости)
         News.buttonAddNews.check(matches(isDisplayed()));
+    }
+
+    public static void checkIconVisible() {
+        //News.iconError.check(matches(isDisplayed()));
+        // News.iconError.check(matches(isDisplayed()));
+        News.iconError.matches(isDisplayed());
+        //  , isDisplayed().perform(actionOnItemAtPosition(n, swipeUp()));
+
+    }
+
+    //проверка созданной новости
+    public static void checkCreatedNews(String title) {
+        DataHelper.isDisplayedSwipe(onView(withText(title)), 3, true);
+    }
+
+    //проверка удаления новости
+    public static void checkDeleteNews(String title) {
+        onView(withText(title)).check(doesNotExist());
+    }
+
+    //изменение заголовка новости
+    public static void updateTitleNews(String title, String newTitle) {
+        //кликаем по новости
+        onView(allOf(News.editNews, hasSibling(withText(title)))).perform(click());
+        //изменяем title
+        News.titleTextInputNews.perform(replaceText(newTitle));
+        //нажимаем на кнопку сохранить
+        News.buttonSaveNews.perform(click());
     }
 }

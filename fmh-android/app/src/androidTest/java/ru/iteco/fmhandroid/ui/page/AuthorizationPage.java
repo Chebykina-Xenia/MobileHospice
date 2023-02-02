@@ -28,4 +28,7 @@ public class AuthorizationPage {
     public static void clickInButton() {
         Authorization.signInButton.perform(click());
     }
+
+
 }
+

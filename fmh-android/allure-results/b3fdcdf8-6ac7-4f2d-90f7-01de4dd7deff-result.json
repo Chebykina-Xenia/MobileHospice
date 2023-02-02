@@ -1,0 +1,53 @@
+{
+    "name": "Проверка просмотра цитат и их описания",
+    "start": 1675346283621,
+    "stop": 1675346301596,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "b3fdcdf8-6ac7-4f2d-90f7-01de4dd7deff",
+    "historyId": "fd2303b8dd6a0c6f5b621239f63b6840",
+    "fullName": "ru.iteco.fmhandroid.ui.test.QuoteTest.shouldGoQuotes",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.QuoteTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldGoQuotes"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.QuoteTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(2769)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

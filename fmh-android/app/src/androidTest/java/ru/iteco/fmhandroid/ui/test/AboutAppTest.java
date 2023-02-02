@@ -9,10 +9,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.page.AboutAppPage;
 import ru.iteco.fmhandroid.ui.page.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
+
 @RunWith(AllureAndroidJUnit4.class)
 
 public class AboutAppTest {
@@ -34,9 +36,24 @@ public class AboutAppTest {
     }
 
     @Test
-    //Проверяем информацию о приложении
+    @DisplayName("Проверяем информацию о приложении")
     public void shouldBeInfInAboutApp() {
         MenuPage.goToAboutApp();
         AboutAppPage.checkAboutAppInfIsFull();
     }
+
+    @Test
+    @DisplayName("Переход по ссылке Политики конфиденциальности") // БАГ
+    public void shouldViewPrivacyPolicy() {
+        MenuPage.goToAboutApp();
+        AboutAppPage.clickPrivacyPolicy();
+    }
+
+    @Test
+    @DisplayName("Переход по ссылке Пользовательское соглашение") // БАГ
+    public void shouldViewUserAgreement() {
+        MenuPage.goToAboutApp();
+        AboutAppPage.clickUserAgreement();
+    }
+
 }

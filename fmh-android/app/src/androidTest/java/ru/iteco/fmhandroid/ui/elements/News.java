@@ -7,6 +7,10 @@ import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import android.view.View;
+
+import org.hamcrest.Matcher;
+
 import ru.iteco.fmhandroid.R;
 
 public class News {
@@ -44,5 +48,6 @@ public class News {
     public static ViewInteraction descriptionTextInputNews = onView(withId(R.id.news_item_description_text_input_edit_text));
     //кнопка Сохранить
     public static ViewInteraction buttonSaveNews = onView(withId(R.id.save_button));
-    public static ViewInteraction categorySee = onView(withId(R.id.news_item_category_text_auto_complete_text_view));
+    public static Matcher<View> iconError = withId(R.id.text_input_start_icon);
+    public static Matcher<View> editNews = withId(R.id.edit_news_item_image_view);
 }
