@@ -16,16 +16,16 @@ import ru.iteco.fmhandroid.ui.date.DataHelper;
 
 public class Claim {
     // Название блока
-    public static ViewInteraction titleClaimsBlock = onView(withText("Claims"));
+    public static ViewInteraction titleClaimsBlock = onView(withText(R.string.claims));
     // Создание заявки
     public static ViewInteraction addNewClaimButton = onView(withId(R.id.add_new_claim_material_button));
-    public static ViewInteraction titleClaimsCreating = onView(withText("Creating"));
+    public static ViewInteraction titleClaimsCreating = onView(withText(R.string.creating));
     public static ViewInteraction titleTextInputClaim = onView(withId(R.id.title_edit_text));
     public static ViewInteraction executorTextInput = onView(withId(R.id.executor_drop_menu_text_input_layout));
     public static ViewInteraction dateClaim = onView(withId(R.id.date_in_plan_text_input_edit_text));
     public static ViewInteraction okButton = onView(withText("OK"));
     public static ViewInteraction timeClaim = onView(withId(R.id.time_in_plan_text_input_edit_text));
-    public static ViewInteraction cancelButton = onView(withText("CANCEL"));
+    public static ViewInteraction cancelButton = onView(withText(R.string.cancel));
     public static ViewInteraction descriptionTextInputClaim = onView(withId(R.id.description_edit_text));
     //Кнопка сохранить
     public static ViewInteraction saveButton = onView(withId(R.id.save_button));

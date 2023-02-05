@@ -11,8 +11,13 @@ import ru.iteco.fmhandroid.R;
 
 public class Authorization {
 
-    public static ViewInteraction authorization = onView(withText("Authorization"));
+    public static ViewInteraction authorization = onView(withText(R.string.authorization));
     public static ViewInteraction loginInput = onView(withHint("Login")); // ожидаем появление нужного элемента
     public static ViewInteraction passwordInput = onView(withHint("Password"));
-    public static ViewInteraction signInButton = onView(withId(R.id.enter_button));
+
+    //не работают при вводе логина и пароля - ошибка
+    //public static ViewInteraction loginInput = onView(withText(R.string.login));
+    //public static ViewInteraction passwordInput = onView(withText(R.string.password));
+    public static ViewInteraction signInButton = onView(withText(R.string.sign_in));
+
 }

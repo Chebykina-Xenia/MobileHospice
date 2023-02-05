@@ -47,6 +47,7 @@ public class AboutAppTest {
     public void shouldViewPrivacyPolicy() {
         MenuPage.goToAboutApp();
         AboutAppPage.clickPrivacyPolicy();
+        AboutAppPage.checkPrivacyPolicy();
     }
 
     @Test
@@ -54,6 +55,7 @@ public class AboutAppTest {
     public void shouldViewUserAgreement() {
         MenuPage.goToAboutApp();
         AboutAppPage.clickUserAgreement();
+        AboutAppPage.checkTermsOfUse();
     }
 
 }

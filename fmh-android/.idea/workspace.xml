@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="883b14d9-51f1-4589-ba13-fd5a055af1ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
@@ -69,7 +70,7 @@
       <recent name="ru.iteco.fmhandroid.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.shouldTryLogInWith...()">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="FMHAndroid.app" />
       <option name="DEPLOY" value="true" />
@@ -127,11 +128,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldChangeNews()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldBeInfInAbout...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldChangeNews" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
+      <option name="METHOD_NAME" value="shouldBeInfInAboutApp" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.AboutAppTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -180,11 +181,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldDeleteNews()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldClaimCancel()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldDeleteNews" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
+      <option name="METHOD_NAME" value="shouldClaimCancel" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -233,10 +234,10 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldFilterNewsCa...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldErrorNotCate...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldFilterNewsCategory" />
+      <option name="METHOD_NAME" value="shouldErrorNotCategory" />
       <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.NewsTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
@@ -339,11 +340,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shouldTryLogInWith...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="shouldNotExecuteCl...()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="FMHAndroid.app" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="shouldTryLogInWithEmptyField" />
-      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.AuthorizationTest" />
+      <option name="METHOD_NAME" value="shouldNotExecuteClaim" />
+      <option name="CLASS_NAME" value="ru.iteco.fmhandroid.ui.test.ClaimTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
@@ -394,11 +395,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android Instrumented Tests.shouldTryLogInWith...()" />
+        <item itemvalue="Android Instrumented Tests.shouldErrorNotCate...()" />
+        <item itemvalue="Android Instrumented Tests.shouldNotExecuteCl...()" />
+        <item itemvalue="Android Instrumented Tests.shouldClaimCancel()" />
+        <item itemvalue="Android Instrumented Tests.shouldBeInfInAbout...()" />
         <item itemvalue="Android Instrumented Tests.shouldLogInWithInV...()" />
-        <item itemvalue="Android Instrumented Tests.shouldChangeNews()" />
-        <item itemvalue="Android Instrumented Tests.shouldFilterNewsCa...()" />
-        <item itemvalue="Android Instrumented Tests.shouldDeleteNews()" />
       </list>
     </recent_temporary>
   </component>
@@ -467,6 +468,51 @@
           <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/AuthorizationPage.java</url>
           <line>35</line>
           <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/NewsTest.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/NewsTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/MenuPage.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/MenuPage.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/MenuPage.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/page/MenuPage.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/androidTest/java/ru/iteco/fmhandroid/ui/test/ClaimTest.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

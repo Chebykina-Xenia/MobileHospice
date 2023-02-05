@@ -16,7 +16,7 @@ import ru.iteco.fmhandroid.R;
 public class News {
 
     // Заголовок блока "Новости"
-    public static ViewInteraction titleNews = onView(withText("News"));
+    public static ViewInteraction titleNews = onView(withText(R.string.news));
     // Кнопка редактирования новостей
     public static ViewInteraction buttonEditNews = onView(withId(R.id.edit_news_material_button));
     // Кнопка создание новости
@@ -40,8 +40,10 @@ public class News {
     public static ViewInteraction titleTextInputNews = onView(withId(R.id.news_item_title_text_input_edit_text));
     //заполнение даты
     public static ViewInteraction dateTextInputNews = onView(withId(R.id.news_item_publish_date_text_input_edit_text));
+    //не нашла R.string...
+    //public static ViewInteraction okButton = onView(withText(R.string.save))
     public static ViewInteraction okButton = onView(withText("OK"));
-    public static ViewInteraction cancelButton = onView(withText("CANCEL"));
+    public static ViewInteraction cancelButton = onView(withText(R.string.cancel));
     //заполняем время
     public static ViewInteraction timeTextInputNews = onView(withId(R.id.news_item_publish_time_text_input_edit_text));
     //заполняем описание

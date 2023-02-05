@@ -51,7 +51,6 @@ public class AuthorizationTest {
     public void shouldLogInWithInValidData() throws InterruptedException {
         AuthorizationPage.logIn(invalidLogin, invalidPassword);
         AuthorizationPage.isAuthorizationWindow();
-        //MenuPage.checkDisplayErrorMessage(activityTestRule, "Wrong login or password");
     }
 
     @Test
@@ -59,6 +58,5 @@ public class AuthorizationTest {
     public void shouldTryLogInWithEmptyField() throws InterruptedException {
         AuthorizationPage.clickInButton();
         AuthorizationPage.isAuthorizationWindow();
-        //MenuPage.checkDisplayErrorMessage(activityTestRule, "Login or password cannot be empty");
     }
 }
