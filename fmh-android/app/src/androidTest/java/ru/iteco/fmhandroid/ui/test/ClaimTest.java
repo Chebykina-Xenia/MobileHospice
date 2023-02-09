@@ -36,45 +36,25 @@ public class ClaimTest {
         AuthorizationPage.logIn("login2", "password2");
     }
 
-    String withDialPadOrTextInput = "dial";
-    String saveOrCancelTime = "save";
-
     //Успешное добавление заявки со статусом в работе (in progress)
     @Test
     @DisplayName("Добавление заявки")
     public void shouldCreateClaimInProgress() throws InterruptedException {
-        String emptyTitle = "no";
-        String title = "Уборка территории зимой";
-        String emptyExecutor = "no";
-        String executor = "no";
-        String withExecutorChoice = "yes";
-        String chosenExecutor = "Ivanov Ivan Ivanovich";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Not description";
         MenuPage.goClaims();
         ClaimPage.startCreationClaim();
-        ClaimPage.fillClaimFields(emptyTitle, title, emptyExecutor, withExecutorChoice, chosenExecutor, executor, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ClaimPage.fillClaimFields("no", "Уборка территории зимой", "no", "yes", "Ivanov Ivan Ivanovich", "no", "no", "no", "dial", "save", "no", "Not description");
         ClaimPage.saveClaim();
 
         ClaimPage.filterStatusClaim(Claim.openStatusFilter);
-        ClaimPage.checkCreatedClaimInClaimsBlock(title);
+        ClaimPage.checkCreatedClaimInClaimsBlock("Уборка территории зимой");
     }
 
     @Test
     @DisplayName("Добавление заявки с пустыми полями")
     public void shouldNotCreateClaim() {
-        String emptyTitle = "yes";
-        String emptyExecutor = "yes";
-        String withExecutorChoice = "yes";
-        String chosenExecutor = "Ivanov Ivan Ivanovich";
-        String emptyDate = "yes";
-        String emptyTime = "yes";
-        String emptyDescription = "yes";
         MenuPage.goClaims();
         ClaimPage.startCreationClaim();
-        ClaimPage.fillClaimFields(emptyTitle, null, emptyExecutor, withExecutorChoice, chosenExecutor, null, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, null);
+        ClaimPage.fillClaimFields("yes", null, "yes", "yes", "Ivanov Ivan Ivanovich", null, "yes", "yes", "dial", "save", "yes", null);
         ClaimPage.saveClaim();
         MenuPage.checkDisplayErrorMessage(activityTestRule, "Fill empty fields");
     }
@@ -83,21 +63,12 @@ public class ClaimTest {
     @Test
     @DisplayName("Добавление заявки без исполнителя")
     public void shouldNotExecuteClaim() throws InterruptedException {
-        String emptyTitle = "no";
-        String title = "Уборка территории зимой";
-        String emptyExecutor = "yes";
-        String withExecutorChoice = "yes";
-        String chosenExecutor = "Ivanov Ivan Ivanovich";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Not description";
         MenuPage.goClaims();
         ClaimPage.startCreationClaim();
-        ClaimPage.fillClaimFields(emptyTitle, title, emptyExecutor, withExecutorChoice, chosenExecutor, null, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        ClaimPage.fillClaimFields("no", "Уборка территории зимой", "yes", "yes", "Ivanov Ivan Ivanovich", null, "no", "no", "dial", "save", "no", "Not description");
         ClaimPage.saveClaim();
         ClaimPage.filterStatusClaim(Claim.progressStatusFilter);
-        ClaimPage.checkCreatedClaimInClaimsBlock(title);
+        ClaimPage.checkCreatedClaimInClaimsBlock("Уборка территории зимой");
     }
 
     //Отмена заявки в статусе Открыта - то есть перевод заявки в статус Cancel
@@ -149,11 +120,10 @@ public class ClaimTest {
     @Test
     @DisplayName("Добавление комментария к заявке")
     public void shouldAddComment() throws InterruptedException {
-        String commentText = "По заявке 356";
         MenuPage.goClaims();
         ClaimPage.filterStatusClaim(Claim.openStatusFilter);
         ClaimPage.openFirstClaim();
-        ClaimPage.addCommentClaim(commentText);
-        ClaimPage.checkCreatedComment(commentText);
+        ClaimPage.addCommentClaim("По заявке 356");
+        ClaimPage.checkCreatedComment("По заявке 356");
     }
 }

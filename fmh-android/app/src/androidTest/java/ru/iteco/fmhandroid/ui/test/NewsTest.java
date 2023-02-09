@@ -34,24 +34,12 @@ public class NewsTest {
         AuthorizationPage.logIn("login2", "password2");
     }
 
-    String chosenCategory = "Объявление";
-    String withDialPadOrTextInput = "dial";
-    String saveOrCancelTime = "save";
-
     @Test
     @DisplayName("Создание новости без категории")
     public void shouldErrorNotCategory() throws InterruptedException {
-        String emptyCategory = "yes";
-        String withCategoryChoice = "no";
-        String category = "no";
-        String title = "Now News";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Description Test";
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        NewsPage.fillNewsFields("yes", "no", "Объявление", "no", "Now News", "no", "no", "dial", "save", "no", "Description Test");
         NewsPage.saveNews();
         NewsPage.checkIconVisible();
     }
@@ -59,91 +47,58 @@ public class NewsTest {
     @Test
     @DisplayName("Создание новости")
     public void shouldCreateNews() throws InterruptedException {
-        String emptyCategory = "no";
-        String withCategoryChoice = "yes";
-        String category = "no";
-        String title = "New News Test";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Description Test";
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "New News Test", "no", "no", "dial", "save", "no", "Description Test");
         NewsPage.saveNews();
-        NewsPage.checkCreatedNews(title);
+        NewsPage.checkCreatedNews("New News Test");
         MenuPage.goNews();
-        NewsPage.filterNews(chosenCategory);
-        NewsPage.deleteNews(title);
+        NewsPage.filterNews("Объявление");
+        NewsPage.deleteNews("New News Test");
     }
 
     @Test
     @DisplayName("Удаление новости")
     public void shouldDeleteNews() throws InterruptedException {
-        String emptyCategory = "no";
-        String withCategoryChoice = "yes";
-        String category = "no";
-        String title = "Test new";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Description Test11";
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Test new", "no", "no", "dial", "save", "no", "Description Test11");
         NewsPage.saveNews();
         MenuPage.goNews();
-        NewsPage.filterNews(chosenCategory);
-        NewsPage.deleteNews(title);
+        NewsPage.filterNews("Объявление");
+        NewsPage.deleteNews("Test new");
 
         MenuPage.goNews();
-        NewsPage.checkDeleteNews(title);
+        NewsPage.checkDeleteNews("Test new");
     }
 
     @Test
     @DisplayName("Проверка работы фильтра")
     public void shouldFilterNewsCategory() throws InterruptedException {
-        String emptyCategory = "no";
-        String withCategoryChoice = "yes";
-        String category = "no";
-        String title = "Chek Filter";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Description";
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Chek Filter", "no", "no", "dial", "save", "no", "Description");
         NewsPage.saveNews();
 
         MenuPage.goNews();
-        NewsPage.filterNews(chosenCategory);
-        NewsPage.checkCreatedNews(title);
-        NewsPage.deleteNews(title);
+        NewsPage.filterNews("Объявление");
+        NewsPage.checkCreatedNews("Chek Filter");
+        NewsPage.deleteNews("Chek Filter");
     }
 
     @Test
     @DisplayName("Редактирование новости")
     public void shouldChangeNews() throws InterruptedException {
-        String emptyCategory = "no";
-        String withCategoryChoice = "yes";
-        String category = "no";
-        String title = "Now Change";
-        String newTitle = "Now Change Test";
-        String emptyDate = "no";
-        String emptyTime = "no";
-        String emptyDescription = "no";
-        String description = "Description Change";
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields(emptyCategory, withCategoryChoice, chosenCategory, category, title, emptyDate, emptyTime, withDialPadOrTextInput, saveOrCancelTime, emptyDescription, description);
+        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Now Change", "no", "no", "dial", "save", "no", "Description Change");
         NewsPage.saveNews();
         MenuPage.goNews();
-        NewsPage.filterNews(chosenCategory);
-        NewsPage.updateTitleNews(title, newTitle);
+        NewsPage.filterNews("Объявление");
+        NewsPage.updateTitleNews("Now Change", "Now Change Test");
         MenuPage.goNews();
-        NewsPage.filterNews(chosenCategory);
-        NewsPage.checkCreatedNews(newTitle);
-        NewsPage.deleteNews(newTitle);
+        NewsPage.filterNews("Объявление");
+        NewsPage.checkCreatedNews("Now Change Test");
+        NewsPage.deleteNews("Now Change Test");
     }
 }
